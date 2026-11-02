@@ -86,3 +86,112 @@ deployment pipeline, a glossary — is in **[`docs/`](./docs/README.md)**.
 ## License
 
 MIT.
+
+
+
+ecom-store-gcp-main/
+│
+├── Frontend/
+│   ├── index.html
+│   └── src/
+│       ├── components/
+│       │   ├── Chatbot.js              # AI shopping chat widget
+│       │   ├── Header.js               # Store header
+│       │   └── Hero.js                 # Homepage hero section
+│       │
+│       ├── pages/
+│       │   ├── Home.js                 # Store homepage
+│       │   ├── Admin.js                # Admin dashboard
+│       │   ├── Cart.js                 # Shopping cart
+│       │   ├── ProductDetail.js        # Product details
+│       │   ├── Profile.js              # Customer profile
+│       │   ├── admin/                  # Product management pages
+│       │   └── profile/                # Authentication and profile pages
+│       │
+│       ├── services/
+│       │   ├── api/
+│       │   │   ├── chat.js             # Chatbot API integration
+│       │   │   ├── products.js         # Product API calls
+│       │   │   ├── cart.js             # Cart API calls
+│       │   │   ├── orders.js           # Order API calls
+│       │   │   ├── auth.js             # Authentication API calls
+│       │   │   ├── http.js             # HTTP client
+│       │   │   └── common.js           # Shared API utilities
+│       │   ├── api_v2.js
+│       │   ├── cartActions.js
+│       │   ├── cartCount.js
+│       │   ├── nav.js
+│       │   └── state.js
+│       │
+│       ├── utils/
+│       │   ├── escapeHtml.js
+│       │   └── placeholder.js
+│       │
+│       ├── main.js                     # Frontend entry point
+│       └── style.css                   # Application styling
+│
+├── backend/
+│   ├── chatbot/
+│   │   ├── agent.py                    # Pydantic AI agent + Groq LLM
+│   │   │                               # search_products tool
+│   │   ├── pipeline.py                 # Complete chatbot execution flow
+│   │   ├── guardrails.py               # Input/output safety checks
+│   │   ├── online_evals.py             # Background LLM evaluations
+│   │   └── __init__.py
+│   │
+│   ├── evals/
+│   │   ├── chatbot_evals.py            # Offline chatbot evaluation tests
+│   │   └── __init__.py
+│   │
+│   ├── routes/
+│   │   ├── chatbot.py                  # POST /chat endpoint
+│   │   ├── products.py                 # Product APIs
+│   │   ├── products_bulk.py            # Bulk product operations
+│   │   ├── cart.py                     # Cart APIs
+│   │   ├── orders.py                   # Order APIs
+│   │   ├── auth.py                     # Authentication APIs
+│   │   ├── google_auth.py              # Google Sign-In
+│   │   └── profile.py                  # Profile APIs
+│   │
+│   ├── utils/
+│   │   ├── llm_gateway.py              # Optional Portkey gateway
+│   │   ├── mongo.py                    # MongoDB query helper functions
+│   │   ├── images.py                   # Product image processing
+│   │   ├── passwords.py                # Password hashing utilities
+│   │   └── users.py                    # User-related utilities
+│   │
+│   ├── database.py                     # MongoDB connection + collections
+│   ├── config.py                       # Centralized environment settings
+│   ├── auth.py                         # Authentication logic
+│   └── models.py                       # Application data models
+│
+├── docs/
+│   ├── 01-overview.md                  # Project overview
+│   ├── 02-architecture.md              # System architecture
+│   ├── 03-frontend.md                  # Frontend documentation
+│   ├── 04-backend.md                   # Backend documentation
+│   ├── 05-database.md                  # Database documentation
+│   ├── 06-ai-assistant.md              # AI assistant documentation
+│   ├── 07-deployment.md                # Deployment documentation
+│   ├── 08-glossary.md                  # Technical glossary
+│   └── STORY.md                        # Project story
+│
+├── demo_data/
+│   ├── Imgs.zip                        # Product images
+│   └── bulk_upload.xlsx                # Product bulk-upload data
+│
+├── Client reports/
+│   ├── LUXE-AI-Assistant-Presentation.pptx
+│   └── LUXE-AI-Assistant-Technical-Design.docx
+│
+├── Dockerfile                          # Application containerization
+├── cloudbuild.yaml                     # GCP build, push and deployment
+├── main.py                             # FastAPI application entry point
+├── requirements.txt                    # Python dependencies
+├── .env.example                        # Environment variable template
+├── .dockerignore
+├── .gitignore
+├── .gitattributes
+├── INTEGRATION.md                      # Store integration instructions
+├── README.md                           # Project documentation
+└── commands.md                         # Useful project commands
